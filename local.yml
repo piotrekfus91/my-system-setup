@@ -1,0 +1,4 @@
+---
+- hosts: target
+  roles:
+    - { name: apps, become_user: root, become: yes }

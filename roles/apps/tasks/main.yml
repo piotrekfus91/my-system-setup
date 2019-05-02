@@ -1,0 +1,38 @@
+---
+# - name: "add apt repositories"
+#   apt_repository:
+#     repo: "{{ item }}"
+#     update_cache: no
+#   with_items:
+#     - ppa:jtaylor/keepass
+#     - ppa:git-core/ppa
+#     - ppa:papirus/papirus # KDE icons
+
+- name: "update apt cache"
+  apt:
+    update_cache: yes
+
+- name: "upgrade"
+  apt:
+    upgrade: yes
+
+- name: "install apps"
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - git
+      - pidgin
+      - vim
+      - dropbox
+      - jq
+      - tmux
+      - papirus-icon-theme
+      # krusader dependencies
+      - arj
+      - zip
+      - unzip
+      - rar
+      - unrar
+      - unace
+      - krename
