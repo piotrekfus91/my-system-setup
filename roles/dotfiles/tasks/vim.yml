@@ -1,0 +1,9 @@
+---
+- name: "install vundle"
+  git:
+    dest: "{{ ansible_env.HOME }}/.vim/bundle/Vundle.vim"
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    version: master
+
+- name: "install plugins"
+  shell: "vim +PluginInstall +qall >/dev/null"

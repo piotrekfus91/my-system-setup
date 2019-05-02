@@ -1,0 +1,30 @@
+---
+- hosts: target
+  roles:
+    - name: dotfiles
+      dir: config
+      tags: config
+    - name: dotfiles
+      dir: git
+      tags: git
+    - name: dotfiles
+      dir: m2
+      tags: m2
+    - name: dotfiles
+      dir: ngrok
+      tags: ngrok
+    - name: dotfiles
+      dir: ssh
+      tags: ssh
+    - name: dotfiles
+      dir: tmux
+      tags: tmux
+    - name: dotfiles
+      dir: unison
+      tags: unison
+    - name: dotfiles
+      dir: xbindkeys
+      tags: xbindkeys
+    - name: dotfiles
+      dir: vim
+      tags: vim

@@ -1,0 +1,100 @@
+[user]
+	email = piotrek.fus.91@gmail.com
+	name = Piotr Fus
+
+[alias]
+     push-for-review = push origin HEAD:refs/for/master
+     push-for-review-develop = push origin HEAD:refs/for/develop
+     push-as-draft = push origin HEAD:refs/drafts/master
+     push-as-draft-develop = push origin HEAD:refs/drafts/develop
+     push-for-review-branch = !git push origin HEAD:refs/for/$1
+     push-as-draft-branch = !git push origin HEAD:refs/drafts/$1
+
+[core]
+    pager = less -r
+    excludesfile = ~/.gitignore
+    editor = vim
+    precomposeunicode = true
+    autocrlf = false
+[color]
+        ui = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+[alias]
+        #those who don't know history, are doomed to repeat it
+        hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
+        histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
+        llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+        changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
+        #wish i knew
+        whois = "!sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -"
+        whatis = show -s --pretty='tformat::%h (%s, %ad)' --date=short
+        howmany = "!sh -c 'git log -a --pretty=oneline | wc -l'"
+        howmanybywhom = shortlog -sn
+        #what's going on, I don't even
+        anychanges = !sh -c 'git fetch' && git log --oneline HEAD..origin/$1
+        anychangesonmaster = !sh -c 'git fetch' && git log --oneline HEAD..origin/master
+        whoischanging = !sh -c 'git shortlog HEAD..origin/$0'
+        whoischangingmaster = !sh -c 'git shortlog HEAD..origin/master'
+        authors = !sh -c 'git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD |grep  \"^author \"|sort|uniq -c|sort -nr'
+     
+        #what branches you have on origin, with info on who is guilty and how long ago. Useful for gitflow and feature branches in general. Requires fetch up-front.
+        showorigin = !sh -c "isHash=true; for i in `git ls-remote -h origin`; do [ ! -z $isHash ] &&  echo \" $i\" || printf \"%-8s %8s %-8s%-3s %-10s %-20s\" `git show -s --pretty=format:\"%C(yellow)%h %Cred%ad %Cblue%an\" --date=relative $i`  ; [ ! -z $isHash ] && isHash=\"\" || isHash=true ;  done"
+        #get remote branches
+        trackallbranches = !sh -c "for branchname in `git branch -r `; do git branch --track $branchname; done"
+        updateallbranches = !sh -c "for branchname in `git branch -r `; do git checkout $branchname ; git pull; done"
+        # fix .gitignore
+        fixgitignore = !git rm -r --cached . && git add . && git commit -m \"Just a .gitignore fix \"
+        #tags
+        showtags = show-ref --tags
+        pushtags = push --tags
+        tagwithdate = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
+        #better versions
+        purr = pull --rebase
+        difff = diff --color-words #just words
+        bbranch = branch -v    
+        branches = branch -avvl
+        sth = stash -u
+        #what do I have in my toolbox?
+        alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+        #fiat lux
+        makegitrepo = !git init && git add . && git commit -m \"initial commit\"
+     
+        #Finds a filename in the git repository. Gives absolute location (from the git root).
+        find = !sh -c 'git ls-tree -r --name-only HEAD | grep --color $1' - 
+        #Deletes all branches that were safely merged into the master. All other are skipped (no worries).
+        cleanup = !git branch --merged master | grep -v 'master$' | xargs git branch -d  
+        #Deletes orphaned remote branches (.git/refs/remotes/origin), clean up reflog and remove all untracked files
+        cleanuplocal = !git remote prune origin && git gc && git clean -df
+        unstage = reset HEAD --
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        ca = commit -a
+        ci = commit
+        st = status
+        co = checkout
+        br = branch
+        push-for-review = push origin HEAD:refs/for/master
+        push-as-draft = push origin HEAD:refs/drafts/master
+        push-for-review-branch = !git push origin HEAD:refs/for/$1
+        push-as-draft-branch = !git push origin HEAD:refs/drafts/$1
+        inviteToGerritChange = "!sh -c \"ssh -p 29418 gerrit.touk.pl 'gerrit set-reviewers --add' $1 `git log | grep Change-Id | head -1 | tr -d ' ' | cut -d':' -f2`\""
+[apply]
+        whitespace = nowarn
+[help]
+        autocorrect = 0
+[push]
+    default = simple
+
+[includeIf "gitdir:~/touk/"]
+    path = ~/touk/.gitconfig

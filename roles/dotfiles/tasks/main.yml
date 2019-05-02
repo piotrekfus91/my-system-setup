@@ -1,0 +1,39 @@
+---
+- name: "find files"
+  find:
+    paths: "{{ playbook_dir }}/roles/dotfiles/files/{{ dir }}"
+    recurse: yes
+    hidden: yes
+  register: files
+
+- set_fact:
+    paths: "{{ files.files | map(attribute='path') | list }}"
+
+- set_fact:
+    file_dir_length: "{{ file_dir | length }}"
+  vars:
+    file_dir: "{{ playbook_dir }}/roles/dotfiles/files/{{ dir }}"
+
+- name: "create parent dirs"
+  file:
+    path: "{{ ansible_env.HOME }}{{ item[file_dir_length|int:] | dirname }}"
+    state: directory
+    recurse: yes
+  with_items: "{{ paths }}"
+  when: item[file_dir_length|int:] | dirname != "/"
+
+- name: "link files"
+  file:
+    state: hard
+    src: "{{ item }}"
+    dest:  "{{ ansible_env.HOME }}{{ item[file_dir_length|int:] }}"
+  with_items: "{{ paths }}"
+
+- name: "check if customization script exists"
+  local_action: stat
+    path="{{ playbook_dir }}/roles/dotfiles/tasks/{{ dir }}.yml"
+  register: customization_script
+
+- name: "customize instalation"
+  include: "{{ dir }}.yml"
+  when: customization_script.stat.exists

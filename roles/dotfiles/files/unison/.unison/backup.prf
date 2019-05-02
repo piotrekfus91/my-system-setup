@@ -1,0 +1,24 @@
+root = /home/pfus/
+root = /media/pfus/MAIN/pfus/
+
+ignore = Name .*.swp
+ignore = Name target
+ignore = Name *.iml
+ignore = Name pom.xml.releaseBackup
+ignore = Name release.properties
+ignore = Name .idea
+ignore = Name .*.log
+ignore = Name \.cache
+ignore = Name dockerFiles
+
+auto = true
+batch = true
+group = true
+owner = true
+times = true
+
+backup = Name *
+backuplocation = central
+backupdir = /media/pfus/MAIN/unison
+
+ui = text

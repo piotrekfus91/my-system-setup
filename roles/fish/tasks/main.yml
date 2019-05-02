@@ -1,0 +1,6 @@
+---
+- name: "install fish shell"
+  apt:
+    name=fish
+  tags:
+  - sudo

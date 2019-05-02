@@ -1,0 +1,6 @@
+authtoken:
+region: eu
+tunnels:
+  sshlocal:
+    proto: tcp
+    addr: 22
