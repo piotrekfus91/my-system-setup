@@ -1,0 +1,6 @@
+---
+- name: "setup sensors"
+  include_tasks: sensors.yml
+
+- name: "setup users"
+  include_tasks: users.yml

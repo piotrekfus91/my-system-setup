@@ -1,0 +1,16 @@
+---
+- name: "setup pfus user"
+  user:
+    name: pfus
+    shell: /usr/bin/fish
+
+- name: "setup crontab"
+  cron:
+    user: pfus
+    name: "{{ item.name }}"
+    minute: "{{ item.minute }}"
+    job: "{{ item.job }}"
+  with_items:
+  - { name: "search for upgrades", minute: 47, job: "aptitude search '~U' > /tmp/listOfUpgrades 2>/tmp/listOfUpgrades.log" }
+  - { name: "update config repositories", minute: 27, job: "~/Programowanie/Bash/bin/update-config-repositories.sh" }
+  - { name: "update apps", minute: 7, job: "~/Programowanie/Bash/bin/update-apps.sh > /tmp/update-apps.log 2>&1" }

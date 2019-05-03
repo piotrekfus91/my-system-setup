@@ -1,13 +1,4 @@
 ---
-# - name: "add apt repositories"
-#   apt_repository:
-#     repo: "{{ item }}"
-#     update_cache: no
-#   with_items:
-#     - ppa:jtaylor/keepass
-#     - ppa:git-core/ppa
-#     - ppa:papirus/papirus # KDE icons
-
 - name: "update apt cache"
   apt:
     update_cache: yes
