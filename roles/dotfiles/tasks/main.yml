@@ -36,4 +36,4 @@
 
 - name: "customize instalation"
   include: "{{ dir }}.yml"
-  when: customization_script.stat.exists
+  when: customization_script is defined and customization_script.stat.exists

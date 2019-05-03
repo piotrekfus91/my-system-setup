@@ -4,3 +4,9 @@
 
 - name: "setup users"
   include_tasks: users.yml
+
+- name: "setup hosts"
+  copy:
+    src=hosts
+    dest=/etc/hosts
+  tags: hosts
