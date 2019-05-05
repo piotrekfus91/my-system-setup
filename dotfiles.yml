@@ -3,28 +3,28 @@
   roles:
     - name: dotfiles
       dir: config
-      tags: config
+      tags: [config, fish]
     - name: dotfiles
       dir: git
       tags: git
     - name: dotfiles
       dir: m2
-      tags: m2
+      tags: [m2, local]
     - name: dotfiles
       dir: ngrok
-      tags: ngrok
+      tags: [ngrok, local]
     - name: dotfiles
       dir: ssh
-      tags: ssh
+      tags: [ssh, local]
     - name: dotfiles
       dir: tmux
-      tags: tmux
+      tags: [tmux, local]
     - name: dotfiles
       dir: unison
-      tags: unison
+      tags: [unison, local]
     - name: dotfiles
       dir: xbindkeys
-      tags: xbindkeys
+      tags: [xbindkeys, local]
     - name: dotfiles
       dir: vim
       tags: vim
