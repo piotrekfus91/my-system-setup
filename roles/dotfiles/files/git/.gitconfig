@@ -4,6 +4,8 @@
 
 [alias]
      push-for-review = push origin HEAD:refs/for/master
+     push-for-review-wip = push origin HEAD:refs/for/master%wip
+     push-for-review-ready = push origin HEAD:refs/for/master%ready
      push-for-review-develop = push origin HEAD:refs/for/develop
      push-as-draft = push origin HEAD:refs/drafts/master
      push-as-draft-develop = push origin HEAD:refs/drafts/develop
