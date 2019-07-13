@@ -1,4 +1,4 @@
-127.0.0.1	localhost kafka ZK app
+127.0.0.1	localhost kafka ZK app fabric8
 127.0.1.1	dell-5480
 
 # The following lines are desirable for IPv6 capable hosts
@@ -29,10 +29,29 @@ ff02::2 ip6-allrouters
 172.16.63.110 tesb2
 172.16.63.115 tesb3
 
+172.16.240.4     t-haproxy    # HAProxy dla środowiska testbed
+172.16.240.5     t-solr1      # Solr, wyszukiwanie klientów CRM (IFE)
+172.16.240.6     t-solr2      # Solr, wyszukiwanie klientów CRM (IFE)
+172.16.240.7     t-cas1       # Cassandra, profil klienta i rozwiązania powiązane
+172.16.240.8     t-cas2       # Cassandra, profil klienta i rozwiązania powiązane
+172.16.240.9     t-cas3       # Cassandra, profil klienta i rozwiązania powiązane
+172.16.240.10    t-esb1       # Klaster Fabric
+172.16.240.11    t-esb2       # Klaster Fabric
+172.16.240.12    t-esb3       # Klaster Fabric
+172.16.240.13    t-esb4       # Klaster Fabric
+172.16.240.14    t-crmd2      # API Crmd customer/sales
+172.16.240.15    t-crmd3      # API Crmd customer/sales
+172.16.240.16    t-crmd4      # API Crmd customer/sales
+172.16.240.17    t-crmd5      # API Crmd customer/sales
+172.16.240.18    t-crmd6      # API Crmd customer/sales
+172.16.240.19    t-sso1       # SSO
+172.16.240.20    t-sso2       # SSO
+
 172.16.39.237 phaproxy
 172.16.42.132 pesb1
 172.16.42.133 pesb2
-172.16.39.238 pesb3
+172.16.42.182 pesb3
+172.16.39.238 pesb8
 
 172.16.42.168 pCAS1
 172.16.42.169 pCAS2
