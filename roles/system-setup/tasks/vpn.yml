@@ -1,0 +1,17 @@
+---
+- name: "download NordVPN"
+  get_url:
+    url: "{{ nord_vpn_deb_url }}"
+    dest: "/tmp/nordvpn.deb"
+
+- name: "install NordVPN deb"
+  apt:
+    deb: "/tmp/nordvpn.deb"
+
+- name: "apt update"
+  apt:
+    update_cache: yes
+
+- name: "install NordVPN"
+  apt:
+    name: nordvpn

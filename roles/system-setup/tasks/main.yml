@@ -10,3 +10,7 @@
     src=hosts
     dest=/etc/hosts
   tags: hosts
+
+- name: "setup vpn"
+  include_tasks: vpn.yml
+  tags: vpn
