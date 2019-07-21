@@ -2,13 +2,13 @@ function fish_greeting
 	set currentPwd $PWD
 	set error 0
 
-	cd ~/.dotfiles
+	cd ~/Programowanie/my-system-setup
 	if [ (git status --porcelain | wc -l) != 0 ]
-		echo -e "\e[31mYou have uncommited changes in your .dotfiles.\e[0m"
+		echo -e "\e[31mYou have uncommited changes in your my-system-setup.\e[0m"
 		set error 1
 	end
 	if [ (git rev-list --left-right --count master...origin/master | awk '{print $1}') != 0 ]
-		echo -e "\e[31mYou have unpushed changes in your .dotfiles.\e[0m"
+		echo -e "\e[31mYou have unpushed changes in your my-system-setup.\e[0m"
 		set error 1
 	end
 
