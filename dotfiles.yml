@@ -3,10 +3,10 @@
   roles:
     - name: dotfiles
       dir: config
-      tags: [config, fish]
+      tags: [config, fish, local]
     - name: dotfiles
       dir: git
-      tags: git
+      tags: [git, remote]
     - name: dotfiles
       dir: m2
       tags: [m2, local]
@@ -27,4 +27,4 @@
       tags: [xbindkeys, local]
     - name: dotfiles
       dir: vim
-      tags: vim
+      tags: [vim, remote]

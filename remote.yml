@@ -1,0 +1,7 @@
+---
+- hosts: target
+  roles:
+    - scripts
+
+- name: "setup dotfiles"
+  import_playbook: dotfiles.yml

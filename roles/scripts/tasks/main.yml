@@ -1,0 +1,16 @@
+---
+- name: "install local scripts"
+  file:
+    state: hard
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+  loop: "{{ lookup('fileglob', 'local/*', wantlist=True) }}"
+  tags: local
+
+- name: "install remote scripts"
+  file:
+    state: hard
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+  loop: "{{ lookup('fileglob', 'remote/*', wantlist=True) }}"
+  tags: remote
