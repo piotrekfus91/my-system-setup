@@ -1,4 +1,4 @@
-127.0.0.1	localhost kafka ZK app fabric8
+127.0.0.1	localhost kafka ZK app fabric8 preapex.p4.org ssotest.p4.org
 127.0.1.1	dell-5480
 
 # The following lines are desirable for IPv6 capable hosts
@@ -21,7 +21,6 @@ ff02::2 ip6-allrouters
 10.22.10.43 elkprd03
 
 172.16.39.244 gitlab.playmobile.pl pbuild
-192.168.1.35 ssotest.p4.org
 172.16.224.241 kafka_dev
 172.16.225.177 kafka1
 
