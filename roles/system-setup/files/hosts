@@ -1,4 +1,4 @@
-127.0.0.1	localhost kafka ZK app fabric8 preapex.p4.org ssotest.p4.org
+127.0.0.1	localhost kafka ZK app fabric8 preapex.p4.org ssotest.p4.org cas.touk.pl
 127.0.1.1	dell-5480
 
 # The following lines are desirable for IPv6 capable hosts
@@ -56,9 +56,26 @@ ff02::2 ip6-allrouters
 172.16.42.169 pCAS2
 172.16.42.170 pCAS3
 
-172.16.45.68 esb5 esb6 esb7 esb8 esb9 esb5dr esb6dr esb7dr esb8dr esb9dr smxcs01 smxcs02
+172.16.44.19 esb5
+172.16.44.20 esb6
+172.16.44.21 esb7
+172.16.44.61 esb8
+172.16.44.62 esb9
 172.16.236.133 lvbe1
+172.16.54.165 esb5dr
+172.16.54.166 esb6dr
+172.16.54.167 esb7dr
+172.16.57.210 esb8dr
+172.16.57.211 esb9dr
 172.17.44.181 lvbe1dr
+172.16.18.101 smxcs01
+172.16.18.102 smxcs02
+172.16.54.168 smx3dr
+172.16.54.169 smx4dr
+172.16.17.144 smx1
+172.16.17.145 smx2
+172.16.54.186 smx1dr
+172.16.54.185 smx2dr
 
 172.16.47.164 waw2-cas1
 172.16.47.165 waw2-cas2
