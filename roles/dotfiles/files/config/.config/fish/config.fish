@@ -845,7 +845,7 @@ thefuck --alias | source
 set -gx GOPATH ~/Programowanie/Go
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH ~/touk/workspace/integracja/bin $PATH
-set -gx JAVA_HOME ~/apps/jdk1.8.0_131
+set -gx JAVA_HOME ~/apps/jdk1.8.0_251
 set -gx PATH $JAVA_HOME/bin $PATH
 set -gx PATH ~/Programowanie/Bash/bin $PATH
 set -gx PATH ~/apps/node-v10.16.2-linux-x64/bin $PATH
