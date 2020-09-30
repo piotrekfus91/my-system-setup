@@ -1,4 +1,4 @@
-127.0.0.1	localhost kafka ZK app fabric8 preapex.p4.org ssotest.p4.org cas.touk.pl
+127.0.0.1	localhost kafka ZK app fabric8 tstapex.p4.org preapex.p4.org prdapex.p4.org ssotest.p4.org sso.test.p4.org cas.touk.pl
 127.0.1.1	dell-5480
 
 # The following lines are desirable for IPv6 capable hosts
@@ -89,4 +89,3 @@ ff02::2 ip6-allrouters
 172.17.49.38 waw5-cas3
 172.17.49.39 waw5-cas4
 172.17.49.40 waw5-cas5
-
