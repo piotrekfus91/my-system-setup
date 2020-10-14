@@ -76,6 +76,8 @@ ff02::2 ip6-allrouters
 172.16.17.145 smx2
 172.16.54.186 smx1dr
 172.16.54.185 smx2dr
+172.16.17.138 haproxy
+172.16.54.187 haproxydr
 
 172.16.47.164 waw2-cas1
 172.16.47.165 waw2-cas2
