@@ -1,3 +1,9 @@
 ---
+- name: "clone tpm"
+  git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+    version: master
+
 - name: "install plugins"
   shell: "{{ ansible_env.HOME }}/.tmux/plugins/tpm/bin/install_plugins"
