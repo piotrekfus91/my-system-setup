@@ -842,13 +842,11 @@ end
 
 thefuck --alias | source
 
-set -gx GOPATH ~/Programowanie/Go
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH ~/touk/workspace/integracja/bin $PATH
 set -gx JAVA_HOME ~/apps/jdk1.8.0_251
 set -gx PATH $JAVA_HOME/bin $PATH
 set -gx PATH ~/Programowanie/Bash/bin $PATH
-set -gx PATH ~/apps/node-v10.16.2-linux-x64/bin $PATH
 set -gx PATH ~/apps/apache-maven-3.6.0/bin $PATH
 set -gx PATH ~/apps/bin/ $PATH
 
@@ -862,7 +860,7 @@ set -gx P4_PROD_SMXCS0_X @P4_PROD_SMXCS0_X@
 set -gx EDITOR vim
 
 function tig
-  /home/pfus/apps/tig/bin/tig --all
+  /usr/bin/tig --all
 end
 
 source /home/pfus/touk/workspace/integracja/bin/smx4-completion.fish
