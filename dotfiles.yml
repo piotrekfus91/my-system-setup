@@ -8,6 +8,9 @@
       dir: git
       tags: [git, remote]
     - name: dotfiles
+      dir: i3
+      tags: [i3, local]
+    - name: dotfiles
       dir: m2
       tags: [m2, local]
     - name: dotfiles
@@ -16,6 +19,9 @@
     - name: dotfiles
       dir: ssh
       tags: [ssh, local]
+    - name: dotfiles
+      dir: tig
+      tags: [tig, local, remote]
     - name: dotfiles
       dir: tmux
       tags: [tmux, local]

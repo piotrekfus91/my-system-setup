@@ -1,0 +1,17 @@
+bind branch n !@git checkout -b %(prompt)
+bind main c !@git checkout %(branch)
+bind main M !@git merge %(branch)
+bind main i !@git rebase %(branch)
+bind main ! !@git branch -d %(branch)
+bind main P !@git push origin HEAD:refs/for/master
+bind main p !@git push --set-upstream origin %(branch)
+bind main O !git remote prune origin
+bind status + !git commit --amend
+bind status a !git add . -u
+bind status S !git stash
+bind status P !git stash pop
+bind refs a !@git branch %(prompt)
+bind refs u !@git pull --rebase
+bind main u !@git pull --rebase
+
+set mouse = yes
