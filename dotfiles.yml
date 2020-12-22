@@ -32,5 +32,8 @@
       dir: xbindkeys
       tags: [xbindkeys, local]
     - name: dotfiles
+      dir: Xresources
+      tags: [Xresources, local]
+    - name: dotfiles
       dir: vim
       tags: [vim, remote]
