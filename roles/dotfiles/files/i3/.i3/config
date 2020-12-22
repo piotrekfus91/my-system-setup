@@ -36,7 +36,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+F12 exec --no-startup-id i3-quickterm shell
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# start window switcher
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
