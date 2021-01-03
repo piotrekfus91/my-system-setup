@@ -1,8 +1,0 @@
----
-- name: "install sensors"
-  apt:
-    name: lm-sensors
-    state: latest
-
-- name: "run sensors"
-  shell: sensors-detect --auto
