@@ -1,7 +1,6 @@
 ---
 - hosts: target
   roles:
-    - { name: apps, become_user: root, become: yes }
     - { name: system-setup, become_user: root, become: yes }
     - { name: scripts }
 
