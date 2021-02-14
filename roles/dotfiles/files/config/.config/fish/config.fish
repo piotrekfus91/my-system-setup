@@ -842,12 +842,8 @@ end
 
 thefuck --alias | source
 
-set -gx PATH $GOPATH/bin $PATH
 set -gx PATH ~/touk/workspace/integracja/bin $PATH
-set -gx JAVA_HOME ~/apps/jdk1.8.0_251
-set -gx PATH $JAVA_HOME/bin $PATH
 set -gx PATH ~/Programowanie/Bash/bin $PATH
-set -gx PATH ~/apps/apache-maven-3.6.0/bin $PATH
 set -gx PATH ~/apps/bin/ $PATH
 
 set -gx P4_TESTBED_PASS @P4_TESTBED_PASS@
