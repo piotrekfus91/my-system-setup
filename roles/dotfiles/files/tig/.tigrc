@@ -15,3 +15,4 @@ bind refs u !@git pull --rebase
 bind main u !@git pull --rebase
 
 set mouse = yes
+set main-view-id-display = yes
