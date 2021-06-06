@@ -1,4 +1,3 @@
-Xft.dpi:       200
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
@@ -237,3 +236,4 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
 #include "/home/pfus/.Xresources-nord"
 #include "/home/pfus/.Xresources-rofi"
+#include "/home/pfus/.Xresources-dpi"
