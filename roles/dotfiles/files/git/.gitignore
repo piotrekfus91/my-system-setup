@@ -6,5 +6,6 @@ release.properties
 *.swp
 target/
 /tags
+node_modules
 
 *.pyc
