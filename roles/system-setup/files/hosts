@@ -91,3 +91,10 @@ ff02::2 ip6-allrouters
 172.17.49.38 waw5-cas3
 172.17.49.39 waw5-cas4
 172.17.49.40 waw5-cas5
+
+### Plus
+10.230.238.133 livebox2-test.pluscdn.pl
+10.230.238.136 livebox2-test-e2-136.pluscdn.pl
+10.230.238.137 livebox2-test-e2-137.pluscdn.pl
+10.230.238.138 livebox2-test-e2-138.pluscdn.pl
+10.230.238.135 livebox2-test-e2-135.pluscdn.pl

@@ -1,7 +1,7 @@
 ---
 - hosts: target
   roles:
-    - { name: system-setup, become_user: root, become: yes }
+    - { name: system-setup, become: yes, become_method: sudo }
     - { name: scripts }
 
 - name: "setup dotfiles"
