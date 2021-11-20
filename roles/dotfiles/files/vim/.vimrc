@@ -1,4 +1,4 @@
-set shell=/bin/bash
+set shell=/bin/zsh
 set nocompatible
 
 filetype off
@@ -11,12 +11,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'
@@ -41,10 +38,6 @@ set softtabstop=4
 
 set mouse=a
 
-"--- NERD ---"
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 1
-
 "--- Syntastic ---"
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
@@ -60,8 +53,6 @@ let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
-nmap <silent> <leader>b :TagbarToggle<CR>
-autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 "--- Git ---"
 hi clear SignColumn
