@@ -226,6 +226,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="Qalculate.*"] floating enable sticky enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -300,6 +301,7 @@ exec --no-startup-id start_conky_maia
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id xset dpms 0 0 300
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -339,8 +341,8 @@ bar {
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
+	tray_output primary
+	#tray_output DP3
 
 	bindsym button4 nop
 	bindsym button5 nop
