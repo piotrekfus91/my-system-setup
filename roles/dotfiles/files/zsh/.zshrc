@@ -78,12 +78,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    colored-man-pages
+    command-not-found
     copydir
     copyfile
     docker
     docker-compose
     dotenv
     fasd
+    fzf
     git
     git-auto-fetch
     history-substring-search
@@ -133,7 +136,7 @@ bindkey "^N" history-beginning-search-forward
 function toggle-transient-prompt() {
   (( ${+functions[p10k]} )) || return
   if [[ ${POWERLEVEL9K_TRANSIENT_PROMPT-} == off ]]; then
-    typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+    typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=same-dir
   else
     typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
   fi
