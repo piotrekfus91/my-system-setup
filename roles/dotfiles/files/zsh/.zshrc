@@ -130,8 +130,12 @@ alias tig="$(which tig) --all"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-bindkey "^P" history-beginning-search-backward
-bindkey "^N" history-beginning-search-forward
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
 
 function toggle-transient-prompt() {
   (( ${+functions[p10k]} )) || return
@@ -150,3 +154,5 @@ function toggle-transient-prompt() {
 # Bind Ctrl-T to toggle powerlevel10k transient prompt.
 zle -N toggle-transient-prompt
 bindkey '^T' toggle-transient-prompt
+
+unsetopt share_history
