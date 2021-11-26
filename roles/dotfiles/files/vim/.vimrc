@@ -25,6 +25,8 @@ filetype plugin indent on
 
 colorscheme nord
 
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 "--- Common settings ---"
 set backspace=indent,eol,start
 set ruler
@@ -35,6 +37,8 @@ set hlsearch
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+set ignorecase
+set smartcase
 
 set mouse=a
 
