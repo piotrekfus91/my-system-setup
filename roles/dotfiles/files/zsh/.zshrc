@@ -80,8 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 plugins=(
     colored-man-pages
     command-not-found
-    copydir
-    copyfile
+    copypath
     docker
     docker-compose
     dotenv
