@@ -15,4 +15,6 @@ for cmd in "$@" ; do
     tmux select-layout -t "${tmux_session}" tiled
 done
 
+tmux setw synchronize-panes on
+
 tmux kill-pane -t "$current_pane"
