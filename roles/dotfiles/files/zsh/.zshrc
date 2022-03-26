@@ -155,3 +155,9 @@ zle -N toggle-transient-prompt
 bindkey '^T' toggle-transient-prompt
 
 unsetopt share_history
+
+function _mulssh {
+  _values $(cat ~/.ssh/known_hosts | awk '{print $1}' | sort | uniq)
+}
+
+compdef _mulssh mulssh.sh
