@@ -4,13 +4,28 @@ SESSION=$USER
 current_pane=$TMUX_PANE
 echo $current_pane
 
-user=""
-if [ "$1" == "-u" ] ; then
-    user=$2'@'
-    shift 2
+while getopts "u:i:" arg ; do
+    case $arg in
+        u)
+            user="${OPTARG}@"
+            ;;
+        i)
+            inventory=${OPTARG}
+            ;;
+        *)
+            exit 1
+    esac
+done
+shift $((OPTIND -1))
+
+if [ ! -z "$inventory" ] ; then
+    hosts="$(ansible -i $inventory $1 --list-hosts)"
+else
+    hosts="$@"
 fi
 
-for cmd in "$@" ; do
+for cmd in $hosts ; do
+    echo $cmd
     tmux split-window "ssh $user$cmd"
     tmux select-layout -t "${tmux_session}" tiled
 done

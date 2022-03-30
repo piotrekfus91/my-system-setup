@@ -158,6 +158,7 @@ unsetopt share_history
 
 function _mulssh {
   _values $(cat ~/.ssh/known_hosts | awk '{print $1}' | sort | uniq)
+  _arguments '-i[inventory file]:filename:_files'
 }
 
 compdef _mulssh mulssh.sh
