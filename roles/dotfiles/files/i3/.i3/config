@@ -37,6 +37,7 @@ bindsym $mod+F12 exec --no-startup-id i3-quickterm shell
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+ctrl+d exec --no-startup-id rofi -show run
 
 # start window switcher
 bindsym $mod+Tab exec --no-startup-id rofi -show window
