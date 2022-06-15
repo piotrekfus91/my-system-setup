@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 SESSION=$USER
 
 current_pane=$TMUX_PANE
