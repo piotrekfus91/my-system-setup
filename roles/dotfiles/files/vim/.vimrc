@@ -1,5 +1,10 @@
+source ~/.vimrc.common
+
 set shell=/bin/zsh
 set nocompatible
+set clipboard=unnamedplus
+
+map <F10> :w !bash<CR>
 
 filetype off
 
@@ -13,7 +18,6 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'

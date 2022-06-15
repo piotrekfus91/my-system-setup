@@ -1,0 +1,8 @@
+nnoremap d "_d
+nnoremap x "_x
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d "+d
+nnoremap <leader>D "+D
+vnoremap <leader>d "+d
