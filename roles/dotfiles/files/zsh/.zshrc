@@ -164,3 +164,5 @@ function _mulssh {
 compdef _mulssh mulssh.sh
 
 bindkey " " magic-space
+
+EDITOR=vim
