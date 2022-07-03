@@ -99,3 +99,9 @@ ff02::2 ip6-allrouters
 10.230.238.137 livebox2-test-e2-137.pluscdn.pl
 10.230.238.138 livebox2-test-e2-138.pluscdn.pl
 10.230.238.135 livebox2-test-e2-135.pluscdn.pl
+
+10.230.238.133 lb2-stage.pluscdn.pl
+10.230.238.136 lb2-stage-e2-136.pluscdn.pl
+10.230.238.137 lb2-stage-e2-137.pluscdn.pl
+10.230.238.138 lb2-stage-e2-138.pluscdn.pl
+10.230.238.135 lb2-stage-e2-135.pluscdn.pl
