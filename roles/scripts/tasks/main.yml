@@ -1,9 +1,11 @@
 ---
-- name: "create local scripts directory"
+- name: "create scripts directory"
   file:
     state: directory
     dest: "{{ ansible_env.HOME }}/.local/bin"
-  tags: local
+  tags:
+    - local
+    - remote
 
 - name: "install local scripts"
   file:
@@ -13,10 +15,19 @@
   loop: "{{ lookup('fileglob', 'local/*', wantlist=True) }}"
   tags: local
 
-- name: "install remote scripts"
+- name: "install remote scripts as links"
   file:
     state: hard
     src: "{{ item }}"
     dest: "{{ ansible_env.HOME }}/.local/bin/{{ item | basename }}"
   loop: "{{ lookup('fileglob', 'remote/*', wantlist=True) }}"
-  tags: remote
+  tags:
+    - local
+
+- name: "install remote scripts as files"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.local/bin/{{ item | basename }}"
+  loop: "{{ lookup('fileglob', 'remote/*', wantlist=True) }}"
+  tags:
+      - remote

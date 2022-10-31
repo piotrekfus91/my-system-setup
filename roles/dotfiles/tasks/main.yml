@@ -5,6 +5,7 @@
     recurse: yes
     hidden: yes
   register: files
+  delegate_to: localhost
 
 - set_fact:
     paths: "{{ files.files | map(attribute='path') | list }}"
@@ -27,7 +28,16 @@
     state: hard
     src: "{{ item }}"
     dest:  "{{ ansible_env.HOME }}{{ item[file_dir_length|int:] }}"
+    force: yes
   with_items: "{{ paths }}"
+  when: inventory_hostname == 'localhost'
+
+- name: "copy files"
+  copy:
+    src: "{{ item }}"
+    dest:  "{{ ansible_env.HOME }}{{ item[file_dir_length|int:] }}"
+  with_items: "{{ paths }}"
+  when: inventory_hostname != 'localhost'
 
 - name: "check if customization script exists"
   local_action: stat

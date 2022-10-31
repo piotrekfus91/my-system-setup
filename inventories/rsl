@@ -1,0 +1,6 @@
+[target]
+smxtst01
+elktst0[1:3]
+smxprd01
+elkprd0[1:3]
+monprd01

@@ -36,7 +36,7 @@
       tags: [Xresources, local]
     - name: dotfiles
       dir: vim
-      tags: [vim, local remote]
+      tags: [vim, local, remote]
     - name: dotfiles
       dir: zsh
       tags: [zsh, local, remote]
