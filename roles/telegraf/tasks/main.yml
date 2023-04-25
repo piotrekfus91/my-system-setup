@@ -1,0 +1,13 @@
+- name: copy config
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/telegraf/{{ item }}"
+  notify: restart telegraf
+  with_items:
+    - telegraf.conf
+
+- name: enable telegraf
+  systemd:
+    name: telegraf
+    enabled: yes
+    daemon-reload: yes

@@ -6,7 +6,7 @@
       tags: [config, fish, local]
     - name: dotfiles
       dir: git
-      tags: [git, remote]
+      tags: [git, local, remote]
     - name: dotfiles
       dir: i3
       tags: [i3, local]

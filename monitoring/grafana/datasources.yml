@@ -1,0 +1,4 @@
+datasources:
+  - name: local
+    type: prometheus
+    url: http://localhost:49090

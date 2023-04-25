@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - prometheus-data-dir:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    network_mode: host
+    restart: always
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/usr/share/prometheus/console_libraries
+      - --web.console.templates=/usr/share/prometheus/consoles
+      - --web.listen-address=localhost:49090
+  grafana:
+    image: grafana/grafana:8.4.5
+    network_mode: host
+    volumes:
+      - ./grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml:ro
+      - ./grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yml:ro
+      - ./grafana/dashboards/System.json:/etc/grafana/dashboards/System.json:ro
+    restart: always
+    environment:
+      GF_SERVER_HTTP_PORT: 43000
+volumes:
+  prometheus-data-dir:
