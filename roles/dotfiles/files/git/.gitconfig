@@ -98,11 +98,11 @@
 [push]
     default = simple
 
-[includeIf "gitdir:~/touk/"]
-    path = ~/touk/.gitconfig
-
 [includeIf "gitdir:~/dev/allegro/"]
     path = ~/dev/allegro/.gitconfig
 
 [includeIf "gitdir:~/dev/touk/"]
     path = ~/dev/touk/.gitconfig
+
+[includeIf "gitdir:~/touk/workspace/suus/"]
+    path = ~/touk/workspace/suus/.gitconfig
