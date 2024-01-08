@@ -7,7 +7,7 @@ fi
 
 server=$1
 printAll=$2
-protocolVersions="ssl2 ssl3 tls1 tls1_1 tls1_2"
+protocolVersions="ssl2 ssl3 tls1 tls1_1 tls1_2 tls1_3"
 
 for protocolVersion in $protocolVersions; do
     for cipher in $(openssl ciphers 'ALL:eNULL' | tr ':' ' '); do
