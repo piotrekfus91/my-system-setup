@@ -6,7 +6,7 @@ month=`date +%m`
 baseDir=~/grive/Dokumenty/$year/$month
 baseDgDir=~/grive/e-bestum/Dokumenty/$year/$month
 
-subdirs="mBank Orange UPC"
+subdirs="mBank Orange Snowflake"
 for subdir in $subdirs ; do
 	mkdir -p $baseDir/$subdir
 done
